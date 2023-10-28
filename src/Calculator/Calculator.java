@@ -1,4 +1,4 @@
-package src;
+package Calculator;
 
 import javax.swing.JFrame;
 
