@@ -22,5 +22,6 @@ class Arithmetic {
     System.out.println("X/Y : " + (x / y));
     System.out.println("X%Y : " + (x % y));
 
+    stdIn.close(); // Scanner 객체를 닫음
   }
 }
