@@ -7,18 +7,25 @@ import java.util.ArrayList; //동적 배열 객체 관리 라이브러리
 public class Calculator extends JFrame {
   // JFrame : GUI 창 , JButton : 버튼
   public Calculator() {
-    setTitle("Calcuator");
-    setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+    setTitle("Calcuator"); // 프로그램 제목
+    setSize(500, 500);
+    setResizable(false); // 크기 조절 off
+    setLocationRelativeTo(null); // 화면 중앙에서 실행
+    setDefaultCloseOperation(DISPOSE_ON_CLOSE); // 프로그램 정상 종료
 
-    Container contentPane = getContentPane();
-    contentPane.setBackground(Color.white);
-    contentPane.setLayout(new FlowLayout());
+    JPanel panel = new JPanel(new GridLayout(4, 4));
 
-    contentPane.add(new JButton("OK"));
-    contentPane.add(new JButton("CANCEL"));
-    contentPane.add(new JButton("IGNORE"));
+    // 글자 필드
+    JTextField textField = new JTextField();
+    panel.add(textField, BorderLayout.NORTH);
 
-    setSize(300, 150);
+    String[] buttons = { "7", "8", "9", "-", "4", "5", "6", "+", "1", "2", "3", "*", "/", "0", "Clear", "=" };
+    for (String button : buttons) {
+      var btn = new JButton(button);
+      panel.add(btn);
+    }
+
+    add(panel);
     setVisible(true);
   }
 
